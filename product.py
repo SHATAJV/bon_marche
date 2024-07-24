@@ -4,7 +4,8 @@
 
 from typing import List
 
-class Produit:
+
+class Product:
     def __init__(self, name: str, category: str, stock: float, price: float):
         self.name: str = name
         self.type: str = category
