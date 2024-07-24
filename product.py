@@ -11,8 +11,11 @@ class Produit:
         self.stock: float = stock
         self.price: float = price
 
-    def update_store(self, add_to_cart):
-        self.stock -= add_to_cart
+    def update_store(self, quantity: float):
+        if self.stock >= quantity:
+            self.stock -= quantity
+            return True
+        return False
 
     def __str__(self):
         return f"product(name={self.name}, type={self.type}, stock={self.stock}, prix={self.price})"
