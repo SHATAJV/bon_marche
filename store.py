@@ -11,6 +11,12 @@ from Customers import  costomers
  class Store:
      def __init__(self):
          self.products: Dict[str, Product]={}
-         self.customers: List[Customer]=[]
-     def add_product (self)
+         self.customers: List[Customers]=[]
+
+def find_product(self, product_name: str) -> Product:
+    return self.products.get(product_name)
+
+
+def add_customer(self, customer: Customers):
+    self.customers.append(customer)
 
