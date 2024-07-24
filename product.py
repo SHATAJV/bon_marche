@@ -4,13 +4,12 @@
 
 from typing import List
 
-
 class Produit:
-    def __init__(self, name:str, type:str, stock:float, price:float):
-        self.name:str = name
-        self.type:str = type
-        self.stock:float = stock
-        self.price:float = price
+    def __init__(self, name: str, category: str, stock: float, price: float):
+        self.name: str = name
+        self.type: str = category
+        self.stock: float = stock
+        self.price: float = price
 
     def update_store(self, add_to_cart):
         self.stock -= add_to_cart
