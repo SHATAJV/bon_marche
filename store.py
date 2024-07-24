@@ -128,7 +128,7 @@ class Store:
             print("3. Exit")
             choice = input("Choose an option: ")
             if choice == '1':
-                self.customer_visit()
+                self.customer_account()
             elif choice == '2':
                 print(self.report())
             elif choice == '3':
