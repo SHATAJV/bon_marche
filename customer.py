@@ -57,12 +57,15 @@ Methods
         :return: receipt.
         """
         receipt = []
+        receipt.append(f"Receipt for {self.first_name} {self.last_name}:")
         for product, quantity in self.cart:
-            receipt.append(f" {product.name} :(unité): {quantity} total price: {quantity * product.price}€")
+            receipt.append(
+                f"{product.name} :(unité): {quantity}  price:{product.price}€ total: {quantity * product.price}€")
         receipt.append(f"Total price : {self.total_price()} €")
         return "\n".join(receipt)
 
-    def __str__(self):
+
+def __str__(self):
         """
         Print the first and last name of customer.
         :return: first and last name of customer.
