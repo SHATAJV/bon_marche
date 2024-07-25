@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+
 from typing import List
+
+from product import Product
 
 
 class Customers:
@@ -28,17 +31,15 @@ Methods
         self.last_name: str = last_name
         self.cart: list = []  # Create list of product in the cart.
 
-    def add_to_cart(self, product: str, quantity: float):
+    def add_to_cart(self, product: Product, quantity: float):
         """
         Add product and quantity to the cart.
-        :param product: str, product to add to cart.
+        :param product: Product, product to add to cart.
         :param quantity: float, quantity of product to add to cart.
         :return: product and quantity.
         """
         if product.update_store(quantity):  # If quantity is available, the product
             self.cart.append(product, quantity)  # is added to the cart.
-        else:
-            print("Insufficient stock! sorry")
 
     def total_price(self) -> float:
         """
@@ -53,6 +54,16 @@ Methods
         Print a receipt of the cart with product, quantity, price and total price.
         :return: receipt.
         """
+        receipt = []
         for product, quantity in self.cart:
-            print(f"{product.name} : {quantity} :{product.price}")
-        print(f"Total price :{self.total_price()}")
+            receipt.append(f"{product.name} : {quantity} : {product.price}")
+        receipt.append(f"Total price : {self.total_price()}")
+        return "\n".join(receipt)
+
+    def __str__(self):
+        """
+        Print the first and last name of customer.
+        :return: first and last name of customer.
+        """
+
+        return f"Customer({self.first_name} {self.last_name})"
