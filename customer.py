@@ -39,7 +39,8 @@ Methods
         :return: product and quantity.
         """
         if product.update_store(quantity):
-            item: Tuple[Product, float] = (product, quantity) # If quantity is available, the product
+            # If quantity is available, the product
+            item: Tuple[Product, float] = (product, quantity)
             self.cart.append(item)                            # is added to the cart.
 
     def total_price(self) -> float:
@@ -57,7 +58,7 @@ Methods
         """
         receipt = []
         for product, quantity in self.cart:
-            receipt.append(f"{product.name} :(kg or pièce): {quantity} prix à l'unité: {product.price}€ total: {quantity *product.price}€")
+            receipt.append(f"{product.name} :(unité): {quantity}  price:{product.price}€ total: {quantity *product.price}€")
         receipt.append(f"Total price : {self.total_price()} €")
         return "\n".join(receipt)
 
