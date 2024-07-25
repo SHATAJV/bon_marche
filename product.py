@@ -41,7 +41,9 @@ Methods
         if self.stock >= quantity:
             self.stock -= quantity
             return True
+        print("Insufficient stock ! Sorry")
         return False
+
 
     def __str__(self):
         """
