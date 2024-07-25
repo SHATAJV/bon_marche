@@ -8,7 +8,7 @@ from typing import List
 class Product:
     def __init__(self, name: str, category: str, stock: float, price: float):
         self.name: str = name
-        self.type: str = category
+        self.category: str = category
         self.stock: float = stock
         self.price: float = price
 
@@ -19,4 +19,4 @@ class Product:
         return False
 
     def __str__(self):
-        return f"product(name={self.name}, type={self.type}, stock={self.stock}, prix={self.price})"
+        return f"product(name={self.name}, type={self.category}, stock={self.stock}, prix={self.price})"
