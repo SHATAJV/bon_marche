@@ -23,6 +23,7 @@ class Stock:
         """
         Initialize stock
         """
+
         self.products: Dict[str, Product] = {}
 
     def add_product(self, product: Product):
@@ -37,6 +38,7 @@ class Stock:
         self.products[product.name] = product
 
     def find_product(self, product_name: str) -> Product:
+
         """
         Search for the product in stock.
         :param product_name: str, name of product
@@ -80,7 +82,13 @@ class Stock:
         Print product in stock.
         :return:Update of stock
         """
+
+
         stock_lines = ["Stock:"]
         for product in self.products.values():
-            stock_lines.append(str(product))
+             stock_lines.append(str(product))
         return "\n".join(stock_lines)
+
+
+
+
