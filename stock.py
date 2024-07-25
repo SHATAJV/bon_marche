@@ -3,6 +3,7 @@
 from typing import Dict
 from product import Product
 
+
 class Stock:
     def __init__(self):
         self.products: Dict[str, Product] = {}
@@ -53,6 +54,3 @@ class Stock:
         for product in self.products.values():
             stock_lines.append(str(product))
         return "\n".join(stock_lines)
-
-
-
