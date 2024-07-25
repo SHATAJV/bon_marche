@@ -4,6 +4,8 @@
 
 from typing import List
 
+from product import Product
+
 
 class Customers:
     def __init__(self,first_name:str,last_name:str):
