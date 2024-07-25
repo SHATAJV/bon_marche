@@ -1,9 +1,10 @@
-from typing import Dict, List
+from typing import List
 
-from customer import Customer
+
 from product import Product
 from customer import Customer
-from stock import  Stock
+from stock import Stock
+
 
 class Store:
     """
@@ -11,7 +12,7 @@ class Store:
 
     Attributes
     ----------
-    products : dict
+
         A dictionary to store products with product name as the key.
     customers : list
         A list to store the customers visiting the store.
@@ -35,7 +36,6 @@ class Store:
         self.stock = Stock()
         self.customers: List[Customer] = []
         self.stock.setup_store()
-
 
     def find_product(self, product_name: str) -> Product:
         """
@@ -63,7 +63,6 @@ class Store:
         customer : Customer
             The customer to be added to the store.
         """
-
 
         self.customers.append(customer)
 
@@ -102,11 +101,9 @@ class Store:
             A formatted string containing the daily report.
         """
 
-        report_lines = ["Daily Report:"]
-        report_lines.append("Customers:")
+        report_lines = ["Daily Report:", "Customers:"]
         for customer in self.customers:
             report_lines.append(str(customer))
             report_lines.append("Remaining Stock:")
             report_lines.append(str(self.stock))
             return "\n".join(report_lines)
-
