@@ -44,7 +44,6 @@ Methods
         print("Insufficient stock ! Sorry")
         return False
 
-
     def __str__(self):
         """
         Print product name, category, stock, and price.
