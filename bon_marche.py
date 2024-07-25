@@ -4,7 +4,8 @@
 # -*- coding: utf-8 -*-
 from store import Store
 
-def store_menu(store: Store):
+
+def store_menu(setup: Store):
     while True:
         print("Welcome to the store!")
         print("1. Customer visit")
@@ -12,13 +13,14 @@ def store_menu(store: Store):
         print("3. Exit")
         choice = input("Choose an option: ")
         if choice == '1':
-            store.customer_account()
+            setup.customer_account()
         elif choice == '2':
-            print(store.report())
+            print(setup.report())
         elif choice == '3':
             break
         else:
             print("Invalid choice, please try again")
+
 
 if __name__ == "__main__":
     store = Store()
