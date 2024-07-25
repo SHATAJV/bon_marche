@@ -8,6 +8,14 @@ class Stock:
         self.products: Dict[str, Product] = {}
 
     def add_product(self, product: Product):
+        """
+                Adds a product to the store.
+
+                Parameters
+                ----------
+                product : Product
+                    The product to be added to the store."""
+
         self.products[product.name] = product
 
     def find_product(self, product_name: str) -> Product:
