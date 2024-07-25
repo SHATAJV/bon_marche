@@ -11,7 +11,8 @@ class Customers:
     def __init__(self,first_name:str,last_name:str):
         self.first_name:str = first_name
         self.last_name: str = last_name
-        self.cart:list = []
+
+
 
     def add_to_cart(self,product:str,quantity:float):
         if product.update_store(quantity):
