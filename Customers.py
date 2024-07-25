@@ -2,14 +2,14 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import List
+from typing import List,Tuple
 
 from product import Product
 
 
 class Customers:
     """
-    A class to represent customers.test
+    A class to represent customers.
 
 Methods
     -------
@@ -29,7 +29,7 @@ Methods
         """
         self.first_name: str = first_name
         self.last_name: str = last_name
-        self.cart: list = []  # Create list of product in the cart.
+        self.cart: List[Tuple[Product, float]] = []  # Create list of product in the cart.
 
     def add_to_cart(self, product: Product, quantity: float):
         """
