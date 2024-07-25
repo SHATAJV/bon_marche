@@ -37,16 +37,6 @@ class Store:
         self.customers: List[Customer] = []
         self.stock.setup_store()
 
-    def add_product(self, product: Product) -> None:
-        """
-        Adds a product to the store.
-
-        Parameters
-        ----------
-        product : Product
-            The product to be added to the store.
-        """
-        self.products[product.name] = product
 
     def find_product(self, product_name: str) -> Product:
         """
@@ -63,8 +53,7 @@ class Store:
             The product with the specified name, or None if not found.
         """
 
-
-            return self.stock.find_product(product_name)
+        return self.stock.find_product(product_name)
 
     def add_customer(self, customer: Customer):
         """
