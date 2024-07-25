@@ -18,8 +18,7 @@ class Store:
 
     Methods
     -------
-    add_product(product: Product) -> None:
-        Adds a product to the store.
+  
     find_product(product_name: str) -> Product:
         Finds and returns a product by its name.
     add_customer(customer: Customer) -> None:
