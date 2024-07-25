@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 from store import Store
 
 
@@ -31,3 +30,4 @@ def store_menu(store: Store):
             print("Invalid choice, please try again.")
 if __name__ == "__main__":
     store = Store()
+    store_menu(store)
