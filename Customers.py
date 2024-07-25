@@ -9,7 +9,7 @@ from product import Product
 
 class Customers:
     """
-    A class to represent customers.
+    A class to represent customers.test
 
 Methods
     -------
