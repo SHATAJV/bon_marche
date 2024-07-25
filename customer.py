@@ -2,12 +2,12 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import List,Tuple
+from typing import List, Tuple
 
 from product import Product
 
 
-class Customers:
+class Customer:
     """
     A class to represent customers.
 
