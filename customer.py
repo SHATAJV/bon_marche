@@ -57,8 +57,8 @@ Methods
         """
         receipt = []
         for product, quantity in self.cart:
-            receipt.append(f"{product.name} : {quantity} : {product.price}")
-        receipt.append(f"Total price : {self.total_price()}")
+            receipt.append(f"{product.name} :(kg or pièce): {quantity} prix à l'unité: {product.price}€ total: {quantity *product.price}€")
+        receipt.append(f"Total price : {self.total_price()} €")
         return "\n".join(receipt)
 
     def __str__(self):
