@@ -31,6 +31,7 @@ Methods
         self.category: str = category
         self.stock: float = stock
         self.price: float = price
+        self.initial_stock: float = stock
 
     def update_store(self, quantity: float):
         """
