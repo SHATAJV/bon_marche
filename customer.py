@@ -23,7 +23,7 @@ Methods
 
     def __init__(self, first_name: str, last_name: str):
         """
-        Initialize customers with their first and last name.
+        Initialize customer with his first and last name and empty liste of products.
         :param first_name: str, the first name of customer.
         :param last_name: str, the last name of customer.
         """
