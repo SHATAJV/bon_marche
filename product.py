@@ -49,4 +49,4 @@ Methods
         Print product name, category, stock, and price.
         :return: product name, category, stock, and price
         """
-        return f"product(name={self.name}, category={self.category}, stock={self.stock}, prix={self.price})"
+        return f"{self.name}, stock={self.stock}"
