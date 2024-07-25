@@ -19,4 +19,4 @@ class Product:
         return False
 
     def __str__(self):
-        return f"product(name={self.name}, type={self.category}, stock={self.stock}, prix={self.price})"
+        return f"product(name={self.name}, category={self.category}, stock={self.stock}, prix={self.price})"
