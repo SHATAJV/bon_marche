@@ -39,8 +39,7 @@ Methods
         :return: product and quantity.
         """
         if product.update_store(quantity):  # If quantity is available, the product
-            item: Tuple[Product, float] = (product, quantity)
-            self.cart.append(item)  # is added to the cart.
+            self.cart.append((product, quantity))  # is added to the cart.
 
     def total_price(self) -> float:
         """

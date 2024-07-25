@@ -1,6 +1,9 @@
 from typing import Dict, List
+
+from customer import Customer
 from product import Product
-from Customers import Customers
+from customer import Customer
+from stock import  Stock
 
 class Store:
     """
@@ -30,20 +33,10 @@ class Store:
     """
 
     def __init__(self):
-        """Initializes the Store with empty products and customers."""
-        self.products: Dict[str, Product] = {}
-        self.customers: List[Customers] = []
+        self.stock = Stock()
+        self.customers: List[Customer] = []
+        self.stock.setup_store()
 
-    def add_product(self, product: Product) -> None:
-        """
-        Adds a product to the store.
-
-        Parameters
-        ----------
-        product : Product
-            The product to be added to the store.
-        """
-        self.products[product.name] = product
 
     def find_product(self, product_name: str) -> Product:
         """
@@ -59,9 +52,10 @@ class Store:
         Product
             The product with the specified name, or None if not found.
         """
-        return self.products.get(product_name)
 
-    def add_customer(self, customer: Customers) -> None:
+        return self.stock.find_product(product_name)
+
+    def add_customer(self, customer: Customer):
         """
         Adds a customer to the store.
 
@@ -70,6 +64,8 @@ class Store:
         customer : Customer
             The customer to be added to the store.
         """
+
+
         self.customers.append(customer)
 
     def customer_account(self) -> None:
@@ -81,7 +77,7 @@ class Store:
         """
         first_name = input("Enter your first name: ")
         last_name = input("Enter your last name: ")
-        customer = Customers(first_name, last_name)
+        customer = Customer(first_name, last_name)
         self.add_customer(customer)
 
         while True:
@@ -90,7 +86,7 @@ class Store:
                 break
             product = self.find_product(product_name)
             if product:
-                quantity = float(input(f"Enter the quantity of {product_name} (in {product.unit}): "))
+                quantity = float(input(f"Enter the quantity of {product_name} : "))
                 customer.add_to_cart(product, quantity)
             else:
                 print("Product not found")
@@ -106,33 +102,12 @@ class Store:
         str
             A formatted string containing the daily report.
         """
+
         report_lines = ["Daily Report:"]
         report_lines.append("Customers:")
         for customer in self.customers:
             report_lines.append(str(customer))
-        report_lines.append("Remaining Stock:")
-        for product in self.products.values():
-            report_lines.append(str(product))
-        return "\n".join(report_lines)
-
-    def store_menu(self) -> None:
-        """
-        Displays the main menu for store operations.
-
-        Provides options for customer visits, generating daily reports, and exiting the program.
-        """
-        while True:
-            print("Welcome to the store!")
-            print("1. Customer visit")
-            print("2. Daily report")
-            print("3. Exit")
-            choice = input("Choose an option: ")
-            if choice == '1':
-                self.customer_account()
-            elif choice == '2':
-                print(self.report())
-            elif choice == '3':
-                break
-            else:
-                print("Invalid choice, please try again")
+            report_lines.append("Remaining Stock:")
+            report_lines.append(str(self.stock))
+            return "\n".join(report_lines)
 
