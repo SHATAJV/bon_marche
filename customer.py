@@ -60,7 +60,7 @@ Methods
         receipt.append(f"Receipt for {self.first_name} {self.last_name}:")
         for product, quantity in self.cart:
             receipt.append(
-                f"{product.name} :(unité): {quantity}  price:{product.price}€ total: {quantity * product.price}€")
+                f"{product.name} :(piece or kg): {quantity}  price:{product.price}€ total: {quantity * product.price}€")
         receipt.append(f"Total price : {self.total_price()} €")
         return "\n".join(receipt)
 
